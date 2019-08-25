@@ -1,9 +1,12 @@
 
+
 #the tsne method for Dimension reduction and visualization 
 library(Rtsne)
-tsne <- Rtsne(matrix, dims=3, pca = F, initial_dims = 10, perplexity = 100)
+tsne <- Rtsne(matrix, dims=3, pca = F,initial_dims = 10,perplexity = 100,max_iter = 500)
 
 #the lasso and random forest algorithm for exLR-seq marker selection 
+n <- training.Norm.data <- training.data[,1: train.zero.sum]
+h <- training.PDAC.data <- training.data[,c(train.zero.sum+1): dim(training.data)[2]]
 library(glmnet)
 lasso.results <- c()
 for (j in 1:1000) {
@@ -21,9 +24,9 @@ for (j in 1:1000) {
 }
 freq.lasso.results <- table(lasso.results)
 library(varSelRF)
-facy <- factor(ntdata$status)
-x <- ntdata[,-1]
-step=varSelRF(x,facy,c.sd = 1, mtryFactor = 1, ntree = 5000,
+facy <- factor(training.data$status)
+x <- training.data[,-1]
+step=varSelRF(x, facy, c.sd = 1, mtryFactor = 1, ntree = 5000,
               ntreeIterat = 2000, vars.drop.num = NULL, vars.drop.frac = 0.3,
               whole.range = TRUE, recompute.var.imp = FALSE, verbose = FALSE,
               returnFirstForest = TRUE, fitted.rf = NULL, keep.forest = FALSE)
