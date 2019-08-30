@@ -9,9 +9,9 @@ tsne <- Rtsne(matrix, dims=3, pca = F, initial_dims = 10, perplexity = 100, max_
 #the lasso and random forest algorithm for exLR-seq marker selection 
 library(glmnet)
 lasso.results <- c()
-for (j in 1000:2000) {
-  n1 <- n[sample(1:nrow(n),ceiling(dim(n)[1]*0.8),replace=F),]
-  h1 <- h[sample(1:nrow(h),ceiling(dim(h)[1]*0.8),replace=F),]
+for (j in 1:1000) {
+  n1 <- n[sample(1:nrow(n),ceiling(dim(n)[1]*0.5),replace=F),]
+  h1 <- h[sample(1:nrow(h),ceiling(dim(h)[1]*0.5),replace=F),]
   s <- rbind.data.frame(n1,h1)
   ts <- apply(s,2,as.numeric)
   y <- as.matrix(ts[,1])
@@ -26,8 +26,8 @@ freq.lasso.results <- table(lasso.results)
 library(varSelRF)
 facy <- factor(training.data$status)
 x <- training.data[,-1]
-step=varSelRF(x, facy, c.sd = 1, mtryFactor = 1, ntree = 5000,
-              ntreeIterat = 2000, vars.drop.num = NULL, vars.drop.frac = 0.3,
+step=varSelRF(x, facy, c.sd = 1, mtryFactor = 1, ntree = 500,
+              ntreeIterat = 500, vars.drop.num = NULL, vars.drop.frac = 0.1,
               whole.range = TRUE, recompute.var.imp = FALSE, verbose = FALSE,
               returnFirstForest = TRUE, fitted.rf = NULL, keep.forest = FALSE)
 select.history <- step$selec.history
