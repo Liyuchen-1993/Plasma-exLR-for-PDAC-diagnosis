@@ -1,5 +1,5 @@
 #Description
-#The core R codes for manuscript gutjnl-2019-318860
+#The core R codes for statistical analyses of manuscript gut jnl-2019-318860
 #If you have any question of our source code, please contact me at yuchen_li@foxmail.com
 #>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 #The tsne method for Dimension reduction and visualization 
