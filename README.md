@@ -6,7 +6,7 @@ This repository summarized the source R Codes of statistical analysis for the ar
 
 ## ***Download and Install***
 
-System requirements: R >= 3.4.1. Only linux is officially supported, but Mac/Windows should work, too.
+System requirements: R >= 3.4.2. Linux system is officially supported, but Mac/Windows should work, too.
 
 To download the new version of the R packages, type the following at the R command line:
 
