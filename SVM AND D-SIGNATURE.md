@@ -63,4 +63,3 @@ te.se <- testing.con$byClass[1]
 
 te.sp <- testing.con$byClass[2]
 ```
-
