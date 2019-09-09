@@ -38,3 +38,4 @@ For more detailed usage instructions, see the manuscript : gutjnl-2019-318860
 | Diagnostic model construction, parameter tuning and d-signature developing | The eight candidate markers were used to establish classifier by SVM algorithm through "**e1071**" R package. Five-fold internal cross-validation method was implemented by 'caret' package for SVM parameters tuning. The d-signature was quantitated by predict strength of SVM model output. |
 | D-signature validated in internal and external validation cohort. | The training diagnostic model was used to estimate d-signature tested across two validation cohorts and the diagnostic efficacy (**Sn, Sp, AUC and accuracy**) were estimated by **SPSS** and R package “**pROC**”. |
 
+
